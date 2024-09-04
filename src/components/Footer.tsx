@@ -79,7 +79,7 @@ const Footer = ()=>{
                 {/**RIght */}
                 <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8">
                     <h1 className="font-medium text-lg">SUBSCRIBE</h1>
-                    <p className="">Be the first to get the latest news  baout the trends, Promotions
+                    <p className="">Be the first to get the latest news about the trends, Promotions
                         Much more
                     </p>
                     <div className=" flex">

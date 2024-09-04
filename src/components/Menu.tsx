@@ -7,7 +7,6 @@ import { useState } from "react"
 
 
 const Menu =() =>{
-     
 
     const [open, setOpen] = useState(false)
     return (
@@ -23,7 +22,7 @@ const Menu =() =>{
                     <Link href="/">Deals</Link>
                     <Link href="/">About</Link>
                     <Link href="/">Contact</Link>
-                    <Link href="/">Logout</Link>
+                    <Link href="/">Logout</Link>                  
                     <Link href="/">Cart(1)</Link>
                 </div>
             )}
