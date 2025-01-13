@@ -2,20 +2,27 @@
 
 import { useState } from "react";
 
-const Add = ()=>{
+const Add = ({
+    productId, 
+    variantId, 
+    stocknumber}:
+    {productId:string, 
+     variantId:string, 
+     stocknumber:number
+    })=>{
 
     const [quantity, setquantity] = useState(1);
 
-    //temperory
+    // //temperory
 
-    const stock = 4
+    // const stock = 4
 
     const handleQuantity = (type: "i" | "d") =>{
         if(type === "d" && quantity > 1){
             setquantity((prev) => prev - 1)
         }
 
-        if(type ==='i' && quantity < stock){
+        if(type ==='i' && quantity < stocknumber){
             setquantity((prev) => prev + 1)
         }
 
@@ -33,7 +40,7 @@ const Add = ()=>{
                         <button className="cursor-pointer text-xl" onClick={()=>{handleQuantity("i")}}>+</button>
                     </div>
                     <div className="text-sm">
-                        Only <span className="text-orange-500">4 items</span> left !!
+                        Only <span className="text-orange-500">{stocknumber} items</span> left !!
                         <br/> {"Don't"} miss it
                     </div>
                 </div>

@@ -20,6 +20,7 @@ const SinglePage = async ({params}:{params:{slug:string}})=>{
 
 
     const product = products.items[0];
+    console.log(product.productOptions)
 
 
     return(
@@ -49,8 +50,16 @@ const SinglePage = async ({params}:{params:{slug:string}})=>{
 
              {/**Line */}   
              <div className="h-[2px] bg-gray-100"/>
-               <CustomizeProducts/>
-               <Add/>
+            {product.variants && product.productOptions ? (  
+               <CustomizeProducts
+                productId={product._id} 
+                variants={product.variants}
+                productoptions={product.productOptions}/>
+              ):(
+                <Add productId={product._id} variantId="00000000-0000-0000-0000-000000000000"
+                stocknumber={product.stock?.quantity || 0}/>
+              )}
+             
 
              {/**Line */}   
         <div className="h-[2px] bg-gray-100"/>
